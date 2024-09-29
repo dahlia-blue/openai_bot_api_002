@@ -2,3 +2,4 @@
 - 生成AI学習
 - Udemyの記事からハンズオン
 - Pythonはver10で使用
+- Streamlit Community Cloudにアップロードする場合は、リポジトリをパブリックにする。
