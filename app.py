@@ -8,7 +8,9 @@ system_role = st.secrets.Role.system
 
 # st.session_stateを使いメッセージのやりとりを保存
 if "messages" not in st.session_state:
-    st.session_state["messages"] =[system_role]
+    st.session_state["messages"] = [
+        {"role": "system", "content": st.secrets.AppSettings.chatbot_setting}
+    ]
     # st.session_state["messages"] = [
     #     {"role": "system", "content": "あなたは優秀なアシスタントAIです。"}
     #     ]
