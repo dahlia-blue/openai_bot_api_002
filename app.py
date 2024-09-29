@@ -4,12 +4,14 @@ import openai
 
 # Streamlit Community Cloudの「Secrets」からOpenAI API keyを取得
 openai.api_key = st.secrets.OpenAIAPI.openai_api_key
+system_role = st.secrets.Role.system
 
 # st.session_stateを使いメッセージのやりとりを保存
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [
-        {"role": "system", "content": "あなたは優秀なアシスタントAIです。"}
-        ]
+    st.session_state["messages"] =[system_role]
+    # st.session_state["messages"] = [
+    #     {"role": "system", "content": "あなたは優秀なアシスタントAIです。"}
+    #     ]
 
 # チャットボットとやりとりする関数
 def communicate():
